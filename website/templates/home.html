@@ -1,0 +1,39 @@
+
+{% extends "base.html" %} 
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1 align="center" style="padding: 2.5% 0;">To-Do List</h1>
+
+<!-- Display Notes Section-->
+<ul class="list-group list-group-flush" id="notes" style="margin-bottom: 2.5%;">
+    {% for note in user.notes %}
+    <li style="font-size: 25px;"> 
+        <div>
+            {{ note.data }}
+        </div>
+
+        <div class="right-side">
+            <button type="button" class="btn btn-default" style="cursor: pointer;">
+                {{ note.due.strftime('%Y-%m-%d') if note.due else '' }}
+            </button>
+
+            <button type="button" class="close" onClick="deleteNote({{ note.id }})"> 
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- Form for creating notes -->
+<form method="POST">
+    <textarea name="note" id="note" class="form-control"></textarea>
+    <br />
+    <input type="date" name="due" class="form-control" placeholder="Due date (optional)">
+    <br />
+    <div align="center">
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+
+{% endblock %}
