@@ -1,0 +1,12 @@
+blinker
+click
+Flask
+Flask-Login
+Flask-SQLAlchemy
+itsdangerous
+Jinja2
+MarkupSafe
+pygame
+SQLAlchemy
+typing_extensions
+Werkzeug
