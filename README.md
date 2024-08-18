@@ -4,5 +4,5 @@ This repository contains the code for the To-Do list web application (excluding 
 1. Install dependences: <br>
 pip install -r requirements.txt
 
-2. Run main:
+2. Run main: <br>
 python3 main.py
