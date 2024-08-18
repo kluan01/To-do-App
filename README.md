@@ -13,4 +13,4 @@ source myenv/bin/activate (mac/Linux) ;  myenv\Scripts\activate (windows)
 4. Install dependences: <br>
 pip install -r requirements.txt
 
-5. Run main:
+5. Run main
