@@ -15,13 +15,14 @@ def home(): # Runs whenever we type in '/'
     if request.method == 'POST':
         note = request.form.get('note')
         due = request.form.get('due')
+        subject = request.form.get('subject')
 
         if len(note) < 1:
             flash('Note is too short!', category='error')
         else:
             try:
                 due_date = datetime.strptime(due, '%Y-%m-%d') if due else None
-                new_note = Note(data=note, user_id=current_user.id, due=due_date)
+                new_note = Note(data=note, user_id=current_user.id, due=due_date, subject=subject)
                 db.session.add(new_note)
                 db.session.commit()
                 flash('Note added!', category='success')
