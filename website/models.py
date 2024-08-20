@@ -9,6 +9,7 @@ class Note(db.Model):
     data = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     due = db.Column(db.DateTime(timezone=True))
+    subject = db.Column(db.String(100))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id')) # Col that always references another Col in a diff database (linkage)
 
 class User(db.Model, UserMixin):
